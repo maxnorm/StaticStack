@@ -14,20 +14,68 @@ while (true)
                .Append(pileStatic.Capacity)
                .Append(":");
 
-    foreach (var elem in pileStatic)
-        stringBPile.Append(" " + elem);
+    var pileArray = pileStatic.ToArray();
+
+    for (int i = 0; i < pileStatic.Count; i++)
+        stringBPile.Append((i > 0 ? ", " : " ") + pileArray[i]);
 
     
     WriteLine(stringBPile.ToString());
 
-    string entre = "";
-    while(entre == "")
+    string entree = "";
+    while(entree == "")
     {
         Write("MN> ");
-        entre = Console.ReadLine();
+        entree = ReadLine();
     }
 
-    if (entre == "exit")
+    if (entree == "exit")
         break;
+
+    string commande = entree.Split(" ")[0];
+    string item = entree.Substring(commande.Length);
+
+    switch (commande)
+    {
+        case "push":
+            try 
+            {
+                if (item == "")
+                    WriteLine("    Erreur: Pousser quoi ???");
+                else
+                    pileStatic.Push(item); 
+            }
+            catch(InvalidOperationException ex) 
+            { 
+                WriteLine("    " + ex.GetType().Name + ": " + ex.Message); 
+            }
+            break;
+
+        case "pop":
+            try 
+            { 
+                WriteLine("   " + pileStatic.Pop()); 
+            }
+            catch (InvalidOperationException ex) 
+            { 
+                WriteLine("    " + ex.GetType().Name + ": " + ex.Message); 
+            }
+            break;
+
+        case "peek":
+            try {
+                WriteLine("   " + pileStatic.Peek()); 
+            }
+            catch (InvalidOperationException ex) 
+            { 
+                WriteLine("    " + ex.GetType().Name + ": " + ex.Message); 
+            }
+            break;
+
+        default:
+            WriteLine("    Commande invalide: " + commande);
+            break;
+    }
+    WriteLine();
 }
-WriteLine("Au revoir");
+WriteLine("Au revoir!");
