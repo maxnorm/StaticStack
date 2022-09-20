@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace StackLib;
 
+// Par Maxime Normandin
 public class StaticStack<T> : IStaticStack<T>
 {
     private T[] array;

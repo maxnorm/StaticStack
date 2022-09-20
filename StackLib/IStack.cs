@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace StackLib;
 
+// Par Maxime Normandin
 public interface IStack<T> : IReadOnlyCollection<T>
 {
     bool IsEmpty { get; }
