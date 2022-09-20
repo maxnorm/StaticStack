@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticStackConsole", "Console\StaticStackConsole.csproj", "{FB538AAF-3D66-4E66-8526-8682051B5657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackLib", "StackLib\StackLib.csproj", "{9BB8374B-1861-4835-9319-51F80BB49F57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{98399230-39F0-41A2-A0E0-59F6B289F1F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB538AAF-3D66-4E66-8526-8682051B5657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB538AAF-3D66-4E66-8526-8682051B5657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB538AAF-3D66-4E66-8526-8682051B5657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB538AAF-3D66-4E66-8526-8682051B5657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BB8374B-1861-4835-9319-51F80BB49F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BB8374B-1861-4835-9319-51F80BB49F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BB8374B-1861-4835-9319-51F80BB49F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BB8374B-1861-4835-9319-51F80BB49F57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98399230-39F0-41A2-A0E0-59F6B289F1F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98399230-39F0-41A2-A0E0-59F6B289F1F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98399230-39F0-41A2-A0E0-59F6B289F1F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98399230-39F0-41A2-A0E0-59F6B289F1F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {353BFF34-C07F-44DD-A75F-02D2024CA15A}
+	EndGlobalSection
+EndGlobal
