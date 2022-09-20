@@ -8,7 +8,7 @@ namespace StackLib;
 
 public interface IStaticStack<T> : IStack<T>
 {
-    int Capacity { get; init; }
+    int Capacity { get; }
 
     bool IsFull { get; }
 }
