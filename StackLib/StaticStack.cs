@@ -5,9 +5,9 @@ namespace StackLib;
 // Par Maxime Normandin
 public class StaticStack<T> : IStaticStack<T>
 {
-    private T[] array;
+    private readonly T[] _array;
 
-    private int top = -1;
+    private int _top = -1;
 
     public int Capacity { get; init; }
 
@@ -17,23 +17,23 @@ public class StaticStack<T> : IStaticStack<T>
             throw new ArgumentException("La capacité doit être minimalement de 1");
 
         Capacity = capacity;
-        array = new T[capacity];
+        _array = new T[capacity];
     }
 
-    public bool IsFull => top == Capacity - 1;
+    public bool IsFull => _top == Capacity - 1;
 
-    public bool IsEmpty => top == -1;
+    public bool IsEmpty => _top == -1;
 
-    public int Count => top + 1;
+    public int Count => _top + 1;
 
-    public IEnumerator<T> GetEnumerator() => array.AsEnumerable().GetEnumerator();
+    public IEnumerator<T> GetEnumerator() => _array.AsEnumerable().GetEnumerator();
 
     public T Peek()
     {
         if (IsEmpty)
             throw new InvalidOperationException("Pile vide");
 
-        return array[top];
+        return _array[_top];
     }
 
     public T Pop()
@@ -41,17 +41,17 @@ public class StaticStack<T> : IStaticStack<T>
         if (IsEmpty)
             throw new InvalidOperationException("Pile vide");
 
-        int ancienTop = top;
-        --top;
-        return array[ancienTop];
+        int ancienTop = _top;
+        --_top;
+        return _array[ancienTop];
     }
 
     public void Push(T item)
     {
         if (IsFull)
             throw new InvalidOperationException("Pile pleine");
-        ++top;
-        array[top] = item;
+        ++_top;
+        _array[_top] = item;
     }
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
