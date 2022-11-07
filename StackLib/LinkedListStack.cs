@@ -23,10 +23,11 @@ namespace StackLib
 
         public IEnumerator<T> GetEnumerator()
         {
-            while (_racine != null)
+            var copie = _racine;
+            while (copie != null)
             {
-                T valeur = _racine.Item;
-                _racine = _racine.Suivant;
+                T valeur = copie.Item;
+                copie = copie.Suivant;
                 yield return valeur;
             }
         }
@@ -50,7 +51,7 @@ namespace StackLib
 
             var noeud = _racine;
             _racine = _racine!.Suivant;
-            _compteur++;
+            _compteur--;
             return noeud!.Item;
         }
 
@@ -62,10 +63,11 @@ namespace StackLib
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            while(_racine != null)
+            var copie = _racine;
+            while (copie != null)
             {
-                T valeur = _racine.Item;
-                _racine = _racine.Suivant;
+                T valeur = copie.Item;
+                copie = copie.Suivant;
                 yield return valeur;
             }
         }

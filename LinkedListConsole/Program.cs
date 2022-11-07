@@ -11,12 +11,11 @@ while (true)
                .Append(linkedListStack.Count)
                .Append(":");
 
-    var enumerator = linkedListStack.GetEnumerator();
-
-    for (int i = 0; i < linkedListStack.Count; i++)
+    int compteur = 0;
+    foreach (var elem in linkedListStack)
     {
-        stringBPile.Append((i > 0 ? ", " : " ") + enumerator.Current);
-        enumerator.MoveNext();
+        stringBPile.Append((compteur > 0 ? ", " : " ") + elem);
+        compteur++;
     }
 
 
